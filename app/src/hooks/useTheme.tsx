@@ -22,9 +22,15 @@ const useTheme = () => {
         [theme.breakpoints.down('md')]: {
             lineHeight: "1",
             fontSize: "0.8rem",
-            letterSpacing: "0px",
+            letterSpacing: "0px"
         },
     };
+
+    theme.palette.primary = {
+        ...theme.palette.primary,
+        main: "#000"
+    }
+
     return theme
 }
 
