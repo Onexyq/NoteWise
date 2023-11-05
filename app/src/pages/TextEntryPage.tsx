@@ -57,7 +57,7 @@ const TextEntryPage = () => {
                 <Grid item xs={12} md={10} lg={8}>
                     <Typography fontWeight={600} sx={{m: "1rem"}}>Put Your Drafts Here:</Typography>
                     <TextField multiline fullWidth rows={16} value={text} onChange={(e)=>{setText(e.target.value)}}/>
-                    <Box ref={buttonGroupRef} display="flex" justifyContent="space-around" marginTop="2rem">
+                    <Box ref={buttonGroupRef} display="flex" justifyContent="space-around" marginTop="2rem" gap="10px">
                         {
                             BUTTON_GROUPS.map((button, i) => (
                                 <Button
