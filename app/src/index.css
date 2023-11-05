@@ -22,7 +22,7 @@ code {
     width: 80vw;
 }
 
-.MuiTextField-root > div, .MuiButton-root{
+.round-text-field > div, .MuiButton-root{
     border-radius: 20px;
     box-shadow:  0 0 16px rgba(66, 66, 66, 0.3), 0 0 5px rgba(66, 66, 66, 0.6);
 }
