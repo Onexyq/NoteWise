@@ -37,12 +37,6 @@ def post_notes_data():
 
     return processed_data
 
-# Slides Generation API
-@app.route('/api/slides', methods=['POST'])
-def post_slides_data():
-    return
-
-
 
 # program entrance
 if __name__ == '__main__':
