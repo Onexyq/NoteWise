@@ -1,5 +1,7 @@
 import openai
-openai.api_key = ('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')
+
+with open("src/keys/openai.key") as f: 
+    openai.api_key = f.readline()
 
 def process_data(text_data):
     response = openai.ChatCompletion.create(
