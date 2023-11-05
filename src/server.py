@@ -2,8 +2,7 @@
 #Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Zhangm, Ying Sun
 
 
-import time
-
+from gevent.pywsgi import WSGIServer
 from flask import Flask, request
 from flask_limiter import Limiter
 from process import process_data
@@ -40,6 +39,5 @@ def get_data():
 
 # entrance
 if __name__ == '__main__':
-    app.run(debug=True)
-    
-    
+    http_server = WSGIServer(('0.0.0.0', 8080), app)
+    http_server.serve_forever()

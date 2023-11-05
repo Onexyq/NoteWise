@@ -2,6 +2,7 @@
 #Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Zhangm, Ying Sun
 
 import openai
+import json
 
 with open("src/keys/openai.key") as f: 
     openai.api_key = f.readline()
@@ -16,6 +17,7 @@ def process_data(text_data):
         ]
     )
 
-    markdown_text = response.choices[0].message
+    parsed_data = json.loads(json.dumps(response.choices[0].message))
+    markdown_text = parsed_data['content']
 
     return markdown_text
