@@ -1,8 +1,10 @@
-#HackSC
+#HackSC 2023
 #Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Zhangm, Ying Sun
 
 import openai
-openai.api_key = ('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')
+
+with open("src/keys/openai.key") as f: 
+    openai.api_key = f.readline()
 
 def process_data(text_data):
     response = openai.ChatCompletion.create(
@@ -17,13 +19,3 @@ def process_data(text_data):
     markdown_text = response.choices[0].message
 
     return markdown_text
-
-
-# def prompt():
-#     openai.ChatCompletion.create(
-#         model="gpt-3.5-turbo",
-#         messages=[
-#             {"role": "system", "content": "You are a helpful summerizer. "},
-#             {"role": "user", "content": "Summarize the following in markdown format."},
-#         ]
-#     )
