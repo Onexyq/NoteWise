@@ -13,7 +13,8 @@ const BUTTON_GROUPS = [
 
 
 const TextEntryPage = () => {
-    const {index, setIndex} = useControlStore()
+    const [text, setText] = useState("")
+    const {index, setIndex, setQuery} = useControlStore()
     const buttonGroupRef = useRef<Element>()
 
     const onScroll = () =>{
@@ -42,6 +43,7 @@ const TextEntryPage = () => {
 
     const ClickButton = (index: number) =>{
         setIndex(index)
+        setQuery(text)
         if (buttonGroupRef.current) {
             animateScrollTo(buttonGroupRef.current, { speed: 1000 })
         }
@@ -54,7 +56,7 @@ const TextEntryPage = () => {
                 <Grid item xs={0} md={1} lg={2}></Grid>
                 <Grid item xs={12} md={10} lg={8}>
                     <Typography fontWeight={600} sx={{m: "1rem"}}>Put Your Drafts Here:</Typography>
-                    <TextField multiline fullWidth rows={16}/>
+                    <TextField multiline fullWidth rows={16} value={text} onChange={(e)=>{setText(e.target.value)}}/>
                     <Box ref={buttonGroupRef} display="flex" justifyContent="space-around" marginTop="2rem">
                         {
                             BUTTON_GROUPS.map((button, i) => (
