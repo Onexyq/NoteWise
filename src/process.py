@@ -9,7 +9,7 @@ with open("src/keys/openai.key") as f:
 
 @AsyncLRU(maxsize=128)
 async def get_mind_map(text_data):
-    response = openai.ChatCompletion.create(
+    response = await openai.ChatCompletion.acreate(
         model="gpt-3.5-turbo-16k",
         temperature=0.2,
         messages=[
@@ -26,7 +26,7 @@ async def get_mind_map(text_data):
 
 @AsyncLRU(maxsize=128)
 async def get_explanation(text_data):
-    response = openai.ChatCompletion.create(
+    response = await openai.ChatCompletion.acreate(
         model="gpt-3.5-turbo-16k",
         temperature=0.2,
         messages=[
