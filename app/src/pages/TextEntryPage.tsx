@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, TextField, Typography } from "@mui/materi
 import { AccountTree, CoPresent, Description } from '@mui/icons-material';
 import { useEffect, useRef, useState } from "react";
 import animateScrollTo from "animated-scroll-to";
+import useControlStore from "../hooks/useControlStore";
 
 
 const BUTTON_GROUPS = [
@@ -12,7 +13,7 @@ const BUTTON_GROUPS = [
 
 
 const TextEntryPage = () => {
-    const [checked, setChecked] = useState(-1)
+    const {index, setIndex} = useControlStore()
     const buttonGroupRef = useRef<Element>()
 
     const onScroll = () =>{
@@ -40,7 +41,7 @@ const TextEntryPage = () => {
     
 
     const ClickButton = (index: number) =>{
-        setChecked(index)
+        setIndex(index)
         if (buttonGroupRef.current) {
             animateScrollTo(buttonGroupRef.current, { speed: 1000 })
         }
@@ -56,13 +57,13 @@ const TextEntryPage = () => {
                     <TextField multiline fullWidth rows={16}/>
                     <Box ref={buttonGroupRef} display="flex" justifyContent="space-around" marginTop="2rem">
                         {
-                            BUTTON_GROUPS.map((button, index) => (
+                            BUTTON_GROUPS.map((button, i) => (
                                 <Button
-                                    variant={checked === index ? "contained" : "outlined"}
+                                    variant={index === i ? "contained" : "outlined"}
                                     size="large"
                                     startIcon={button.icon}
                                     key={button.name}
-                                    onClick={()=>ClickButton(index)}
+                                    onClick={()=>ClickButton(i)}
                                 >
                                     {button.name}
                                 </Button>
