@@ -1,5 +1,4 @@
-gevent
-flask
-flask_limiter
+fastapi
+uvicorn
 openai
 async-cache
