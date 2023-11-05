@@ -5,7 +5,7 @@ import openai
 import json
 
 with open("src/keys/openai.key") as f: 
-    openai.api_key = f.readline()
+    openai.api_key = f.readline().rstrip('\n')
 
 @AsyncLRU(maxsize=128)
 async def get_mind_map(text_data):
