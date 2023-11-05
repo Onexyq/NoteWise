@@ -1,0 +1,23 @@
+{
+  "presentation": {
+    "template": "title_slide_template.pptx",
+    "export_version": "Pptx2010",
+    "resultFileName": "quick_start_example",
+    "slides": [
+      {
+        "type":"slide",
+        "slide_index": 0,
+        "shapes": [
+          {
+            "name": "Title 1",
+            "content": "Your generated PowerPoint presentation"
+          },
+          {
+            "name": "Subtitle 2",
+            "content": "Create, fill and manage PowerPoint documents through simple API requests."
+          }
+        ]
+      }
+    ]
+  }
+}
