@@ -1,5 +1,5 @@
-#HackSC 2023
-#Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Zhangm, Ying Sun
+# HackSC 2023
+# Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Wang, Ying Sun
 
 from fastapi import FastAPI, Request
 import uvicorn

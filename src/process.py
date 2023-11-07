@@ -1,10 +1,11 @@
-#HackSC 2023
-#Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Zhangm, Ying Sun
+# HackSC 2023
+# Authors: Boshe Zhang, Yiqi Xue, Zhiyuan Wang, Ying Sun
+
 from cache import AsyncLRU
 import openai
 import json
 
-with open("src/keys/openai.key") as f: 
+with open("./keys/openai.key") as f: 
     openai.api_key = f.readline()
 
 @AsyncLRU(maxsize=128)
